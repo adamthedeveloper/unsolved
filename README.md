@@ -15,6 +15,7 @@ createuser deploy -h localhost
 NOTE: Answer N
 
 createdb unsolved_d -h localhost
+
 createdb unsolved_t -h localhost
 
 NOTE: Install latest ruby using rvm (install rvm if you don't have it):
