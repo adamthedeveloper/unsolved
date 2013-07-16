@@ -46,4 +46,4 @@ gem 'capistrano', group: :development
 
 # Adam Added
 gem 'rails_admin'
-gem "devise"
+gem "devise", git: "git://github.com/plataformatec/devise.git", branch: "rails4"
