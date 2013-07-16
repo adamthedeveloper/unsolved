@@ -1,4 +1,13 @@
 GIT
+  remote: git://github.com/airblade/paper_trail.git
+  revision: 1baead241804bbe476a8fa89b24ab4bdcb6d0c95
+  branch: rails4
+  specs:
+    paper_trail (2.7.2)
+      activerecord (~> 4.0)
+      railties (~> 4.0)
+
+GIT
   remote: git://github.com/plataformatec/devise.git
   revision: 6b5988d756d780903bf8c9ccb3e2b3b724ccebe8
   branch: rails4
@@ -182,6 +191,7 @@ DEPENDENCIES
   devise!
   jbuilder (~> 1.2)
   jquery-rails
+  paper_trail!
   pg
   rails (= 4.0.0)
   rails_admin

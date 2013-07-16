@@ -19,7 +19,7 @@ development:
   encoding: unicode
   database: unsolved_d
   pool: 5
-  username: deploy
+  username: root
   password:
   host: localhost
 
