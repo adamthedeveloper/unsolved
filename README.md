@@ -31,6 +31,7 @@ cd unsolved
 echo "rvm use --create ruby-2.0.0-p247@unsolved" > .rvmrc
 
 cd ..
+
 cd unsolved
 
 NOTE: Rvm should be recognized now
