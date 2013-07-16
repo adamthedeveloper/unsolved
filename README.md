@@ -22,7 +22,9 @@ NOTE: Install latest ruby using rvm (install rvm if you don't have it):
 
 rvm install ruby-2.0.0-p247
 
-git clone git@github.com:adamthedeveloper/unsolved.git
+NOTE: Go ahead and fork this project into your own account
+
+git clone git@github.com:< name on your account >/unsolved.git # NOTE: change to clone your fork
 
 cd unsolved
 
