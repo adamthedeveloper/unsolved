@@ -48,3 +48,4 @@ gem 'capistrano', group: :development
 gem 'rails_admin'
 gem 'devise',      git: 'git://github.com/plataformatec/devise.git', branch: 'rails4'
 gem 'paper_trail', git: 'git://github.com/airblade/paper_trail.git', branch: 'rails4'
+gem 'annotate'

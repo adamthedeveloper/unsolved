@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: journalists
+#
+#  id         :integer          not null, primary key
+#  user_id    :integer
+#  nickname   :string(255)
+#  first_name :string(255)
+#  last_name  :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:

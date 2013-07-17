@@ -42,11 +42,13 @@ ActiveRecord::Schema.define(version: 20130717035253) do
     t.datetime "updated_at"
   end
 
+  add_index "incident_reports", ["incident_id"], name: "index_incident_reports_on_incident_id", using: :btree
+  add_index "incident_reports", ["journalist_id"], name: "index_incident_reports_on_journalist_id", using: :btree
+
   create_table "incidents", force: true do |t|
     t.string   "title"
     t.text     "description"
     t.datetime "date"
-    t.integer  "journalist_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -59,6 +61,8 @@ ActiveRecord::Schema.define(version: 20130717035253) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "journalists", ["user_id"], name: "index_journalists_on_user_id", using: :btree
 
   create_table "people", force: true do |t|
     t.string   "first_name"
