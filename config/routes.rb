@@ -2,6 +2,14 @@ Unsolved::Application.routes.draw do
   
   
   
+  resources :suspects
+
+  resources :victims
+
+  resources :incidents
+
+  resources :journalists
+
   mount RailsAdmin::Engine => '/master', :as => 'rails_admin'
   devise_for :admins
   

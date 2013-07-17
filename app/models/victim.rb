@@ -1,0 +1,2 @@
+class Victim < Person
+end

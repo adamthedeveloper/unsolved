@@ -1,0 +1,25 @@
+<h1>Listing suspects</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @suspects.each do |suspect| %>
+      <tr>
+        <td><%= link_to 'Show', suspect %></td>
+        <td><%= link_to 'Edit', edit_suspect_path(suspect) %></td>
+        <td><%= link_to 'Destroy', suspect, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Suspect', new_suspect_path %>

@@ -1,0 +1,33 @@
+<h1>Listing journalists</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Nickname</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @journalists.each do |journalist| %>
+      <tr>
+        <td><%= journalist.user_id %></td>
+        <td><%= journalist.nickname %></td>
+        <td><%= journalist.first_name %></td>
+        <td><%= journalist.last_name %></td>
+        <td><%= link_to 'Show', journalist %></td>
+        <td><%= link_to 'Edit', edit_journalist_path(journalist) %></td>
+        <td><%= link_to 'Destroy', journalist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Journalist', new_journalist_path %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130716234716) do
+ActiveRecord::Schema.define(version: 20130717035253) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,66 @@ ActiveRecord::Schema.define(version: 20130716234716) do
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
+
+  create_table "incident_reports", force: true do |t|
+    t.integer  "journalist_id"
+    t.integer  "incident_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "incidents", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "date"
+    t.integer  "journalist_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "journalists", force: true do |t|
+    t.integer  "user_id"
+    t.string   "nickname"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "people", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.text     "description"
+    t.integer  "sex",           default: 0
+    t.integer  "race_id"
+    t.date     "dob"
+    t.date     "dod"
+    t.integer  "hair_color_id"
+    t.integer  "eye_color_id"
+    t.integer  "weight"
+    t.integer  "height"
+    t.string   "type"
+    t.hstore   "properties"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "people", ["eye_color_id"], name: "index_people_on_eye_color_id", using: :btree
+  add_index "people", ["hair_color_id"], name: "index_people_on_hair_color_id", using: :btree
+  add_index "people", ["race_id"], name: "index_people_on_race_id", using: :btree
+  add_index "people", ["type"], name: "index_people_on_type", using: :btree
+
+  create_table "person_reports", force: true do |t|
+    t.integer  "incident_id"
+    t.integer  "journalist_id"
+    t.integer  "person_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "person_reports", ["incident_id"], name: "index_person_reports_on_incident_id", using: :btree
+  add_index "person_reports", ["journalist_id"], name: "index_person_reports_on_journalist_id", using: :btree
+  add_index "person_reports", ["person_id"], name: "index_person_reports_on_person_id", using: :btree
 
   create_table "rails_admin_histories", force: true do |t|
     t.text     "message"
