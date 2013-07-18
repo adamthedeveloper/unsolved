@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130718042259) do
+ActiveRecord::Schema.define(version: 20130718044615) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -95,6 +95,18 @@ ActiveRecord::Schema.define(version: 20130718042259) do
   end
 
   add_index "journalists", ["user_id"], name: "index_journalists_on_user_id", using: :btree
+
+  create_table "media_items", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "journalist_id"
+    t.integer  "incident_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "media_items", ["incident_id"], name: "index_media_items_on_incident_id", using: :btree
+  add_index "media_items", ["journalist_id"], name: "index_media_items_on_journalist_id", using: :btree
 
   create_table "people", force: true do |t|
     t.string   "first_name"
