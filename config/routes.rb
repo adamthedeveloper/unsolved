@@ -2,6 +2,8 @@ Unsolved::Application.routes.draw do
   
   
   
+  resources :comments
+
   resources :documents
 
   resources :suspects

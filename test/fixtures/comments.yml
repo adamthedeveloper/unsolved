@@ -1,0 +1,26 @@
+# == Schema Information
+#
+# Table name: comments
+#
+#  id               :integer          not null, primary key
+#  body             :text
+#  commentable_id   :integer
+#  commentable_type :string(255)
+#  journalist_id    :integer
+#  created_at       :datetime
+#  updated_at       :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  body: MyText
+  commentable_id: 1
+  commentable_type: MyString
+  journalist_id: 1
+
+two:
+  body: MyText
+  commentable_id: 1
+  commentable_type: MyString
+  journalist_id: 1

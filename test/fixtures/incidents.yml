@@ -2,13 +2,12 @@
 #
 # Table name: incidents
 #
-#  id            :integer          not null, primary key
-#  title         :string(255)
-#  description   :text
-#  date          :datetime
-#  journalist_id :integer
-#  created_at    :datetime
-#  updated_at    :datetime
+#  id          :integer          not null, primary key
+#  title       :string(255)
+#  description :text
+#  date        :datetime
+#  created_at  :datetime
+#  updated_at  :datetime
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html

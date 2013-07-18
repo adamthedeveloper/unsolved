@@ -11,6 +11,7 @@
 #
 
 class PersonReport < ActiveRecord::Base
+  include Commentlet
   belongs_to :journalist
   belongs_to :incident
   belongs_to :person
