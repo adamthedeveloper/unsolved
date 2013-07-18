@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130718034133) do
+ActiveRecord::Schema.define(version: 20130718042259) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,17 @@ ActiveRecord::Schema.define(version: 20130718034133) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "geolocations", force: true do |t|
+    t.string   "geoable_type"
+    t.integer  "geoable_id"
+    t.float    "lat"
+    t.float    "long"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "geolocations", ["geoable_id", "geoable_type"], name: "index_geolocations_on_geoable_id_and_geoable_type", using: :btree
 
   create_table "incident_reports", force: true do |t|
     t.integer  "journalist_id"

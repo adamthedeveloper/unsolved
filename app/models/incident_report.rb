@@ -11,6 +11,7 @@
 
 class IncidentReport < ActiveRecord::Base
   include Commentlet
+  include Geolocationable
   belongs_to :incident
   belongs_to :journalist
 end

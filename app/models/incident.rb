@@ -12,6 +12,8 @@
 
 class Incident < ActiveRecord::Base
   include Commentlet
+  include Geolocationable
+
   has_many :incident_reports
   has_many :person_reports
   has_many :journalists, through: :incident_reports
