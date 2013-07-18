@@ -2,6 +2,8 @@ Unsolved::Application.routes.draw do
   
   
   
+  resources :documents
+
   resources :suspects
 
   resources :victims
