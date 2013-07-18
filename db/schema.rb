@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130718044615) do
+ActiveRecord::Schema.define(version: 20130718053031) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -142,6 +142,20 @@ ActiveRecord::Schema.define(version: 20130718044615) do
   add_index "person_reports", ["incident_id"], name: "index_person_reports_on_incident_id", using: :btree
   add_index "person_reports", ["journalist_id"], name: "index_person_reports_on_journalist_id", using: :btree
   add_index "person_reports", ["person_id"], name: "index_person_reports_on_person_id", using: :btree
+
+  create_table "photos", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "journalist_id"
+    t.integer  "photoable_id"
+    t.string   "photoable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image"
+  end
+
+  add_index "photos", ["journalist_id"], name: "index_photos_on_journalist_id", using: :btree
+  add_index "photos", ["photoable_id", "photoable_type"], name: "index_photos_on_photoable_id_and_photoable_type", using: :btree
 
   create_table "rails_admin_histories", force: true do |t|
     t.text     "message"

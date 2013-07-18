@@ -2,6 +2,8 @@ Unsolved::Application.routes.draw do
   
   
   
+  resources :photos
+
   resources :media_items
 
   resources :comments
