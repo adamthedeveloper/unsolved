@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: photos
+#
+#  id             :integer          not null, primary key
+#  title          :string(255)
+#  description    :text
+#  journalist_id  :integer
+#  photoable_id   :integer
+#  photoable_type :string(255)
+#  created_at     :datetime
+#  updated_at     :datetime
+#  image          :string(255)
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:

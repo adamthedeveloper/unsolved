@@ -22,6 +22,7 @@
 
 class Person < ActiveRecord::Base
   include Commentlet
+  include Picturable
   has_many :person_reports
   has_many :incidents, through: :person_reports
   has_many :journalists, through: :person_reports

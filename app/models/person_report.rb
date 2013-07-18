@@ -12,6 +12,7 @@
 
 class PersonReport < ActiveRecord::Base
   include Commentlet
+  include Picturable
   belongs_to :journalist
   belongs_to :incident
   belongs_to :person
